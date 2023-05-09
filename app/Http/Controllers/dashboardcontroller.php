@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class dashboardcontroller extends Controller
 {
     //
-    public function index(){
-            return view(view:'test');
-    
+    public function index(Request $request){
+    return view('test', [
+    'title' => $request ->query(key: 'title', default: 'valor default' )
+            ]);
+            
     }
 }
